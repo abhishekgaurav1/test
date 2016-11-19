@@ -1,7 +1,7 @@
 node("docker") {
     docker.withRegistry('abhishekgaurav/test', 'dockercreds') {
     
-        git url: "<<your-git-repo-url>>", credentialsId: 'githubcreds'
+        git url: "https://github.com/abhishekgaurav1/javaee7-simple-sample.git", credentialsId: 'githubcreds'
     
         sh "git rev-parse HEAD > .git/commit-id"
         def commit_id = readFile('.git/commit-id').trim()
